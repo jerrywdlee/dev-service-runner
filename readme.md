@@ -29,7 +29,7 @@ You may need place a `dev-service.conf.yml` under your project directory, as sam
 
 ## Run
 ```bash
-# If installed at global
+# If installed at global
 run-ds
 
 # Or as installed at local
@@ -37,7 +37,7 @@ $(npm bin)/run-ds
 ```
 
 ## Looks like
-![Sample Usage](../assets/dev-service-runner_demo.gif "Sample Usage")
+![Sample Usage](https://cdn.rawgit.com/jerrywdlee/dev-service-runner/19ccd55a/assets/dev-service-runner_demo.gif "Sample Usage")
 
 ## License (MIT)
 Copyright 2017~2018 Jerry Lee
