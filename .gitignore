@@ -125,4 +125,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# example dev-service.conf.yml
+dev-service.conf.yml
+
 # End of https://www.gitignore.io/api/windows,macos,linux,node
