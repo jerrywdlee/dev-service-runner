@@ -1,0 +1,5 @@
+# example dev-service.conf.yml
+- 
+  nameTag: Redis
+  color: yellow
+  command: redis-server /usr/local/etc/redis.conf

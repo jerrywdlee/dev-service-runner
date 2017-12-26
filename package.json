@@ -1,0 +1,19 @@
+{
+  "name": "dev-service-runner",
+  "version": "0.0.1",
+  "description": "A runner to run other service once for dev, such as Redis, MongoDB and Elasticsearch",
+  "main": "dev_service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["service-runner"],
+  "author": "jerrywdlee",
+  "license": "MIT",
+  "bin": {
+    "run-ds": "./dev_service.js"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "yamljs": "^0.3.0"
+  }
+}

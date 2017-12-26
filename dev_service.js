@@ -1,0 +1,51 @@
+'use strict';
+const { spawn } = require('child_process');
+const path = require("path");
+const YAML = require('yamljs');
+const colors = require('colors/safe');
+const CONF_PATHS = [
+  path.resolve('dev-service.conf.yml'),
+  path.resolve(__dirname, 'dev-service.conf.yml')
+];
+
+let devService = null;
+
+for (const confPath of CONF_PATHS) {
+  try {
+    devService = YAML.load(confPath);
+    if (devService) break;
+  } catch (error) {}
+}
+
+if (!devService) {
+  console.log(colors.bold.red(`Failed!`), `\nNo ${colors.bold.green('dev-service.conf.yml')} find under ${__dirname}`);
+  process.exit(1);
+}
+
+const RUNNERS = [];
+
+for (let i = 0; i < devService.length; i++) {
+  let { nameTag, color, command } = devService[i];
+  color = color || 'bold'; // if no color defined, use only bold
+  let params = command.trim().split(' ');
+  command = params.shift();
+
+  const runner = spawn(command, params);
+  runner.stdout.on('data', (data) => {
+    data.toString().split('\n').forEach(row => {
+      console.log(colors.bold[color](`[${nameTag}]`), row);
+    });
+  });
+
+  runner.stderr.on('data', (data) => {
+    data.toString().split('\n').forEach(row => {
+      console.log(colors.bold[color](`[${nameTag}]`), colors.red(row));
+    });
+  });
+
+  runner.on('close', (code) => {
+    console.log(colors.bold[color](`[${nameTag}]`), `exited with code ${code}`);
+  });
+
+  RUNNERS.push(runner);
+}
