@@ -34,13 +34,20 @@ for (let i = 0; i < devService.length; i++) {
 
   const runner = spawn(command, params);
   runner.stdout.on('data', (data) => {
-    data.toString().split('\n').forEach(row => {
+    // console.log(data.toString());
+    data.toString()
+      .replace(/\n\r$|\n$/, '')
+      .split(/\n\r|\n/)
+      .forEach(row => {
       console.log(colors.bold[color](`[${nameTag}]`), row);
     });
   });
 
   runner.stderr.on('data', (data) => {
-    data.toString().split('\n').forEach(row => {
+    data.toString()
+      .replace(/\n\r$|\n$/, '')
+      .split(/\n\r|\n/)
+      .forEach(row => {
       console.log(colors.bold[color](`[${nameTag}]`), colors.red(row));
     });
   });
