@@ -5,14 +5,16 @@ const { spawn } = require('child_process');
 const path = require("path");
 const YAML = require('yamljs');
 const colors = require('colors/safe');
-const CONF_PATHS = [
+let CONF_PATHS = [
   path.resolve('dev-service.conf.yml'),
   path.resolve(__dirname, 'dev-service.conf.yml')
 ];
 
-console.log(process.argv)
+// console.log(process.argv);
 if (process.argv[2]) {
-  CONF_PATHS.unshift(path.resolve(process.argv[2]));
+  // CONF_PATHS.unshift(path.resolve(process.argv[2]));
+  // force use argument
+  CONF_PATHS = [path.resolve(process.argv[2])];
 }
 
 let devService = null;

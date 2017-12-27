@@ -1,0 +1,15 @@
+# dev-service.conf.yml for test
+- 
+  nameTag: Proc1
+  color: yellow
+  command: node test/stubs/proc1.js
+
+- 
+  nameTag: Proc2 
+  color: blue
+  command: node test/stubs/proc2.js --argv=abc
+
+- 
+  nameTag: Proc3
+  color: green
+  command: node test/stubs/proc3.js
