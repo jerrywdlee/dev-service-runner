@@ -1,4 +1,7 @@
 # Dev Service Runner
+[![npm version](https://badge.fury.io/js/dev-service-runner.svg)](https://badge.fury.io/js/dev-service-runner)
+[![Build Staus](https://travis-ci.org/jerrywdlee/dev-service-runner.svg?branch=master)](https://travis-ci.org/jerrywdlee/dev-service-runner.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/jerrywdlee/dev-service-runner/badge.svg?branch=master)](https://coveralls.io/github/jerrywdlee/dev-service-runner?branch=master)
 
 This is a script runner for running other service once on one's development environment, such as Redis, MongoDB and Elasticsearch
 
