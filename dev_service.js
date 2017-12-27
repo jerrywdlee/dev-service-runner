@@ -10,6 +10,11 @@ const CONF_PATHS = [
   path.resolve(__dirname, 'dev-service.conf.yml')
 ];
 
+console.log(process.argv)
+if (process.argv[2]) {
+  CONF_PATHS.unshift(path.resolve(process.argv[2]));
+}
+
 let devService = null;
 
 for (const confPath of CONF_PATHS) {

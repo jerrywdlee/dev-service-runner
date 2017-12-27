@@ -34,6 +34,9 @@ run-ds
 
 # Or as installed at local
 $(npm bin)/run-ds
+
+# If want run at customized config file
+run-ds YOUR-CONFIG.yml
 ```
 
 ## Looks like
