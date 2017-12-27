@@ -5,8 +5,8 @@
   "main": "dev_service.js",
   "scripts": {
     "test": "mocha --require intelli-espower-loader",
-    "coverage": "nyc mocha",
-    "coveralls": "nyc mocha && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc mocha --timeout 10000",
+    "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "service-runner"

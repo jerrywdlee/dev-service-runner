@@ -13,3 +13,7 @@
   nameTag: Proc3
   color: green
   command: node test/stubs/proc3.js
+
+- 
+  nameTag: NoColor
+  command: node test/stubs/proc2.js

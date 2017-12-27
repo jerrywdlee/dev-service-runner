@@ -5,6 +5,10 @@ const { spawn } = require('child_process');
 const path = require("path");
 const YAML = require('yamljs');
 const colors = require('colors/safe');
+const COLOR_ARRAY = [
+  'black', 'red', 'green', 'yellow', 'blue',
+  'magenta', 'cyan', 'white', 'gray', 'rainbow'
+];
 let CONF_PATHS = [
   path.resolve('dev-service.conf.yml'),
   path.resolve(__dirname, 'dev-service.conf.yml')
@@ -35,7 +39,7 @@ const RUNNERS = [];
 
 for (let i = 0; i < devService.length; i++) {
   let { nameTag, color, command } = devService[i];
-  color = color || 'bold'; // if no color defined, use only bold
+  color = color || COLOR_ARRAY[parseInt(Math.random() * COLOR_ARRAY.length)]; // if no color defined, use random
   let params = command.trim().split(' ');
   command = params.shift();
 

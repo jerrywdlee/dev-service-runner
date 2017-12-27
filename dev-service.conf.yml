@@ -1,12 +1,6 @@
-# example dev-service.conf.yml
-# This element is setting for running redis service
+# example default dev-service.conf.yml for test
+# This element is setting for running test/stub/proc0.js
 - 
-  nameTag: Redis # needed, as the name tag show in console
+  nameTag: Default # needed, as the name tag show in console
   color: yellow # optional, the color of name tag
-  command: redis-server /usr/local/etc/redis.conf # needed, command to start this service 
-
-# This element is setting for running mongod service
-- 
-  nameTag: MongoDB # needed, as the name tag show in console
-  color: blue # optional, the color of name tag
-  command: mongod --dbpath /usr/local/var/mongodb # needed, command to start this service 
+  command: node test/stubs/proc1.js # needed, command to start this service 

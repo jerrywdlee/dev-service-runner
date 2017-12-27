@@ -29,6 +29,9 @@ You may need place a `dev-service.conf.yml` under your project directory, as sam
   color: blue # optional, the color of name tag
   command: mongod --dbpath /usr/local/var/mongodb # needed, command to start this service 
 ```
+### About Color settings
+We used [Marak/colors.js](https://github.com/Marak/colors.js) as our color setting plugin, so for more settings, please check [this site](https://github.com/Marak/colors.js#colors-and-styles).
+
 
 ## Run
 ```bash
