@@ -1,11 +1,12 @@
 {
   "name": "dev-service-runner",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A runner to run other service once for dev, such as Redis, MongoDB and Elasticsearch",
   "main": "dev_service.js",
   "scripts": {
     "test": "mocha --require intelli-espower-loader",
-    "coverage": "nyc mocha"
+    "coverage": "nyc mocha",
+    "coveralls": "nyc mocha && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "service-runner"
@@ -24,6 +25,7 @@
     "url": "https://github.com/jerrywdlee/dev-service-runner.git"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^4.0.1",
     "nyc": "^11.4.1",

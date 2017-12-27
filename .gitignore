@@ -128,4 +128,7 @@ $RECYCLE.BIN/
 # example dev-service.conf.yml
 dev-service.conf.yml
 
+# coveralls tokens
+.coveralls.yml
+
 # End of https://www.gitignore.io/api/windows,macos,linux,node
